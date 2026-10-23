@@ -1,0 +1,352 @@
+C:\Users\Asus>cd OneDrive
+
+C:\Users\Asus\OneDrive>cd Desktop
+
+C:\Users\Asus\OneDrive\Desktop>cd git-hw
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git init
+Initialized empty Git repository in C:/Users/Asus/OneDrive/Desktop/git-hw/.git/
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "Initial commit"
+[master (root-commit) 8f8d922] Initial commit
+ 1 file changed, 6 insertions(+)
+ create mode 100644 README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -M main
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git remote add origin https://github.com/pavelzateruha-svg/LabaGit.git
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 321 bytes | 321.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout -b feature-a
+Switched to a new branch 'feature-a'
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "feature-a: чёто"
+[feature-a 253c86c] feature-a: чёто
+ 1 file changed, 4 insertions(+)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push -u origin feature-a
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 394 bytes | 394.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'feature-a' on GitHub by visiting:
+remote:      https://github.com/pavelzateruha-svg/LabaGit/pull/new/feature-a
+remote:
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ * [new branch]      feature-a -> feature-a
+branch 'feature-a' set up to track 'origin/feature-a'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout -b feature-b
+Switched to a new branch 'feature-b'
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "feature-b: чёто"
+[feature-b 82db42c] feature-b: чёто
+ 1 file changed, 2 insertions(+)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push -u origin feature-b
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 321 bytes | 321.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'feature-b' on GitHub by visiting:
+remote:      https://github.com/pavelzateruha-svg/LabaGit/pull/new/feature-b
+remote:
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ * [new branch]      feature-b -> feature-b
+branch 'feature-b' set up to track 'origin/feature-b'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git merge feature-a -m "Merge feature-a"
+Updating 8f8d922..253c86c
+Fast-forward (no commit created; -m option ignored)
+ README.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/pavelzateruha-svg/LabaGit.git
+   8f8d922..253c86c  main -> main
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout feature-b
+Switched to branch 'feature-b'
+Your branch is up to date with 'origin/feature-b'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git rebase main
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply 82db42c... feature-b: чёто
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+Could not apply 82db42c... # feature-b: чёто
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git rebase --continue
+[detached HEAD b19da9e] feature-b: чёто
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+Successfully rebased and updated refs/heads/feature-b.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push --force origin feature-b
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 320 bytes | 320.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ + 82db42c...b19da9e feature-b -> feature-b (forced update)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout -b feature-c
+Switched to a new branch 'feature-c'
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "feature-c"
+[feature-c f007278] feature-c
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push -u origin feature-c
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 328 bytes | 328.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'feature-c' on GitHub by visiting:
+remote:      https://github.com/pavelzateruha-svg/LabaGit/pull/new/feature-c
+remote:
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ * [new branch]      feature-c -> feature-c
+branch 'feature-c' set up to track 'origin/feature-c'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git merge feature-c
+Updating 253c86c..f007278
+Fast-forward
+ README.md | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "main: изменить строку группы"
+[main 00217de] main: изменить строку группы
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/pavelzateruha-svg/LabaGit.git
+   253c86c..00217de  main -> main
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git log --oneline
+00217de (HEAD -> main, origin/main) main: изменить строку группы
+f007278 (origin/feature-c, feature-c) feature-c
+253c86c (origin/feature-a, feature-a) feature-a: чёто
+8f8d922 Initial commit
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout -b feature-c-new 253c86c
+Switched to a new branch 'feature-c-new'
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "feature-c-new: изменить строку группы"
+[feature-c-new 76963a7] feature-c-new: изменить строку группы
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push -u origin feature-c-new
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 374 bytes | 374.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'feature-c-new' on GitHub by visiting:
+remote:      https://github.com/pavelzateruha-svg/LabaGit/pull/new/feature-c-new
+remote:
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ * [new branch]      feature-c-new -> feature-c-new
+branch 'feature-c-new' set up to track 'origin/feature-c-new'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git merge feature-c-new
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add README.md
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "Merge feature-c-new"
+[main ec32a0f] Merge feature-c-new
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 338 bytes | 338.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/pavelzateruha-svg/LabaGit.git
+   00217de..ec32a0f  main -> main
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -d feature-c
+Deleted branch feature-c (was f007278).
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin --delete feature-c
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ - [deleted]         feature-c
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -d feature-c-new
+Deleted branch feature-c-new (was 76963a7).
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin --delete feature-c-new
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ - [deleted]         feature-c-new
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -a
+  feature-a
+  feature-b
+* main
+  remotes/origin/feature-a
+  remotes/origin/feature-b
+  remotes/origin/main
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -d feature-a
+Deleted branch feature-a (was 253c86c).
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -d feature-b
+warning: deleting branch 'feature-b' that has been merged to
+         'refs/remotes/origin/feature-b', but not yet merged to HEAD
+Deleted branch feature-b (was b19da9e).
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin --delete feature-a
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ - [deleted]         feature-a
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin --delete feature-b
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ - [deleted]         feature-b
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -d feature-c
+error: branch 'feature-c' not found
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -d feature-c-new
+error: branch 'feature-c-new' not found
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git branch -d feature-d
+error: branch 'feature-d' not found
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin --delete feature-c
+error: unable to delete 'feature-c': remote ref does not exist
+error: failed to push some refs to 'https://github.com/pavelzateruha-svg/LabaGit.git'
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin --delete feature-c-new
+error: unable to delete 'feature-c-new': remote ref does not exist
+error: failed to push some refs to 'https://github.com/pavelzateruha-svg/LabaGit.git'
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin --delete feature-d
+error: unable to delete 'feature-d': remote ref does not exist
+error: failed to push some refs to 'https://github.com/pavelzateruha-svg/LabaGit.git'
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git log --oneline --graph --all > log.txt
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git add log.txt
+warning: in the working copy of 'log.txt', LF will be replaced by CRLF the next time Git touches it
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git commit -m "Add log.txt"
+[main 9461e8d] Add log.txt
+ 1 file changed, 8 insertions(+)
+ create mode 100644 log.txt
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin main
+To https://github.com/pavelzateruha-svg/LabaGit.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/pavelzateruha-svg/LabaGit.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git pull origin main
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 3 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 1.17 KiB | 149.00 KiB/s, done.
+From https://github.com/pavelzateruha-svg/LabaGit
+ * branch            main       -> FETCH_HEAD
+   ec32a0f..697f071  main       -> origin/main
+Merge made by the 'ort' strategy.
+ README.md | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+C:\Users\Asus\OneDrive\Desktop\git-hw>git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 745 bytes | 372.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/pavelzateruha-svg/LabaGit.git
+   697f071..d1799c5  main -> main
