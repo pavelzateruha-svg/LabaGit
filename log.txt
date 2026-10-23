@@ -1,0 +1,8 @@
+*   ec32a0f Merge feature-c-new
+|\  
+| * 76963a7 feature-c-new: изменить строку группы
+* | 00217de main: изменить строку группы
+* | f007278 feature-c
+|/  
+* 253c86c feature-a: чёто
+* 8f8d922 Initial commit
